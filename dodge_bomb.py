@@ -30,9 +30,9 @@ def main():
     bg_img = pg.image.load("ex02/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex02/fig/3.png")
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
-    kk_sk = kk_img  # 追加機能1
-
-    kk_kd:int = 0  # 追加機能1
+    
+    kk_sk = kk_img  # 4限演習1
+    kk_kd:int = 0  # 4限演習1
 
 # 演習3{
     # こうかとんSurface（kk_img）からこうかとんRect（kk_rct）を抽出する
@@ -75,7 +75,7 @@ def main():
         kk_rct.move_ip(sum_mv)
 # }演習3
 
-# 追加機能1
+# # 4限演習1
         if sum_mv == [-5,0] and kk_kd != 0:
             kk_kd = 0
             kk_img = kk_sk
