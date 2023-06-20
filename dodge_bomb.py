@@ -14,6 +14,16 @@ delta = {
 }
 # }演習3
 
+# 演習4{
+def check_bound(rect: pg.Rect) -> tuple[bool,bool]:
+    yoko, tate = True,True
+    if rect.left < 0 or WIDTH < rect.right:  # 横方向判定
+        yoko = False
+    if rect.top < 0 or HEIGHT < rect.bottom:  # 縦方向判定
+        tate = False
+    return yoko,tate
+# }演習4
+
 def main():
     pg.display.set_caption("逃げろ！こうかとん")
     screen = pg.display.set_mode((WIDTH, HEIGHT))
@@ -56,13 +66,24 @@ def main():
         kk_rct.move_ip(sum_mv)
 # }演習3
 
+# 演習4{ 
+        if check_bound(kk_rct) != (True, True):
+            kk_rct.move_ip(-sum_mv[0], -sum_mv[1])
+# }演習4 
+
 
         screen.blit(bg_img, [0, 0])
         #screen.blit(kk_img, [900, 400])
-
         screen.blit(kk_img, kk_rct)  # 演習3
-
         bomb_rct.move_ip(vx,vy)  # 演習2
+
+# 演習4{         
+        yoko,tate = check_bound(bomb_rct)
+        if not yoko:
+            vx *= -1
+        if not tate:
+            vy *= -1
+# }演習4 
 
 # 演習1{
         #screen.blit(bomb_img, [800, 400])
