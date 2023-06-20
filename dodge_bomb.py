@@ -23,6 +23,10 @@ def main():
     bomb_rct.center = x,y  # 爆弾の中心座標を乱数で指定する
 # }演習1
 
+# 演習2{
+    vx,vy = +5,+5
+# }演習2
+
     clock = pg.time.Clock()
     tmr = 0
     while True:
@@ -32,6 +36,11 @@ def main():
 
         screen.blit(bg_img, [0, 0])
         screen.blit(kk_img, [900, 400])
+        
+# 演習2{
+        bomb_rct.move_ip(vx,vy)
+# }演習2
+
 # 演習1{
         #screen.blit(bomb_img, [800, 400])
         screen.blit(bomb_img, bomb_rct)
