@@ -79,40 +79,40 @@ def main():
         if sum_mv == [-5,0] and kk_kd != 0:
             kk_kd = 0
             kk_img = kk_sk
-            kk_img = pg.transform.rotate(kk_img, 0)
+            kk_img = pg.transform.rotate(kk_img, 0)  # 向き:そのまま
         elif sum_mv == [-5,5] and kk_kd != 1:
             kk_kd = 1
             kk_img = kk_sk
-            kk_img = pg.transform.rotate(kk_img, 45)
+            kk_img = pg.transform.rotate(kk_img, 45)  # 向き:左下
         elif sum_mv == [0,5] and kk_kd != 2:
             kk_kd = 2
             kk_img = kk_sk
             kk_img = pg.transform.flip(kk_img, True,False)
-            kk_img = pg.transform.rotate(kk_img, -90)
+            kk_img = pg.transform.rotate(kk_img, -90)  # 向き:下
         elif sum_mv == [5,5] and kk_kd != 3:
             kk_kd = 3
             kk_img = kk_sk
             kk_img = pg.transform.flip(kk_img, True,False)
-            kk_img = pg.transform.rotate(kk_img, -45)
+            kk_img = pg.transform.rotate(kk_img, -45)  # 向き:右下
         elif sum_mv == [5,0] and kk_kd != 4:
             kk_kd = 4
             kk_img = kk_sk
             kk_img = pg.transform.flip(kk_img, True,False)
-            kk_img = pg.transform.rotate(kk_img, 0)
+            kk_img = pg.transform.rotate(kk_img, 0)  # 向き:右
         elif sum_mv == [5,-5] and kk_kd != 5:
             kk_kd = 5
             kk_img = kk_sk
             kk_img = pg.transform.flip(kk_img, True,False)
-            kk_img = pg.transform.rotate(kk_img, 45)
+            kk_img = pg.transform.rotate(kk_img, 45)  # 向き:右上
         elif sum_mv == [0,-5] and kk_kd != 6:
             kk_kd = 6
             kk_img = kk_sk
             kk_img = pg.transform.flip(kk_img, True,False)
-            kk_img = pg.transform.rotate(kk_img, 90)
+            kk_img = pg.transform.rotate(kk_img, 90)  # 向き:上
         elif sum_mv == [-5,-5] and kk_kd != 7:
             kk_kd = 7
             kk_img = kk_sk
-            kk_img = pg.transform.rotate(kk_img, -45)
+            kk_img = pg.transform.rotate(kk_img, -45)  # 向き:左上
 
         
 
