@@ -30,6 +30,9 @@ def main():
     bg_img = pg.image.load("ex02/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex02/fig/3.png")
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
+    kk_sk = kk_img
+
+    kk_kd:int = 0
 
 # 演習3{
     # こうかとんSurface（kk_img）からこうかとんRect（kk_rct）を抽出する
@@ -71,6 +74,47 @@ def main():
                 sum_mv[1] += mv[1]
         kk_rct.move_ip(sum_mv)
 # }演習3
+
+# 追加機能1
+        if sum_mv == [-5,0] and kk_kd != 0:
+            kk_kd = 0
+            kk_img = kk_sk
+            kk_img = pg.transform.rotate(kk_img, 0)
+        elif sum_mv == [-5,5] and kk_kd != 1:
+            kk_kd = 1
+            kk_img = kk_sk
+            kk_img = pg.transform.rotate(kk_img, 45)
+        elif sum_mv == [0,5] and kk_kd != 2:
+            kk_kd = 2
+            kk_img = kk_sk
+            kk_img = pg.transform.flip(kk_img, True,False)
+            kk_img = pg.transform.rotate(kk_img, -90)
+        elif sum_mv == [5,5] and kk_kd != 3:
+            kk_kd = 3
+            kk_img = kk_sk
+            kk_img = pg.transform.flip(kk_img, True,False)
+            kk_img = pg.transform.rotate(kk_img, -45)
+        elif sum_mv == [5,0] and kk_kd != 4:
+            kk_kd = 4
+            kk_img = kk_sk
+            kk_img = pg.transform.flip(kk_img, True,False)
+            kk_img = pg.transform.rotate(kk_img, 0)
+        elif sum_mv == [5,-5] and kk_kd != 5:
+            kk_kd = 5
+            kk_img = kk_sk
+            kk_img = pg.transform.flip(kk_img, True,False)
+            kk_img = pg.transform.rotate(kk_img, 45)
+        elif sum_mv == [0,-5] and kk_kd != 6:
+            kk_kd = 6
+            kk_img = kk_sk
+            kk_img = pg.transform.flip(kk_img, True,False)
+            kk_img = pg.transform.rotate(kk_img, 90)
+        elif sum_mv == [-5,-5] and kk_kd != 7:
+            kk_kd = 7
+            kk_img = kk_sk
+            kk_img = pg.transform.rotate(kk_img, -45)
+
+        
 
 # 演習4{ 
         if check_bound(kk_rct) != (True, True):
