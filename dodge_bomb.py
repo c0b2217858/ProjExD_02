@@ -30,9 +30,9 @@ def main():
     bg_img = pg.image.load("ex02/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex02/fig/3.png")
     kk_img = pg.transform.rotozoom(kk_img, 0, 2.0)
-    kk_sk = kk_img
+    kk_sk = kk_img  # 追加機能1
 
-    kk_kd:int = 0
+    kk_kd:int = 0  # 追加機能1
 
 # 演習3{
     # こうかとんSurface（kk_img）からこうかとんRect（kk_rct）を抽出する
